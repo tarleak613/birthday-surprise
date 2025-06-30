@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Me to You 💌</title>
+  <link rel="stylesheet" href="./yesstyle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <style>
+    .spidey-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .floating-spidey {
+      position: absolute;
+      top: 100%;
+      height: 60px;
+      animation: floatUp ease-in infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.1);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Spidey animation container -->
+  <div class="spidey-container"></div>
+  <div class="hearts-container"></div>
+
+
+  <!-- Spidey floating script -->
+  <script>
+    const spideyImages = [
+      // "https://media1.tenor.com/m/1jK4vpP4ezkAAAAd/spiderman-trying-to-look-cool.gif",
+      "https://media.tenor.com/_Q1ixRUfvZYAAAAj/manimarcus.gif",
+      "https://media.tenor.com/N-1o4SYhywYAAAAj/spider-man-spiderman.gif",
+      "https://media.tenor.com/N-1o4SYhywYAAAAj/spider-man-spiderman.gif",
+      "https://media.tenor.com/G7HwToou_M8AAAAj/spider-man-swing.gif"
+    ];
+    const spideyContainer = document.querySelector(".spidey-container");
+
+    function createSpidey() {
+      const img = document.createElement("img");
+      img.src = spideyImages[Math.floor(Math.random() * spideyImages.length)];
+      img.className = "floating-spidey";
+      img.style.left = Math.random() * 100 + "vw";
+      img.style.animationDuration = 4 + Math.random() * 3 + "s";
+      spideyContainer.appendChild(img);
+      setTimeout(() => img.remove(), 7000);
+    }
+
+    setInterval(createSpidey, 500);
+  </script>
+  <script>
+  const heartEmojis = ["❤️", "💕", "💘", "💖", "💗", "💓"];
+  const heartsContainer = document.querySelector(".hearts-container");
+
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 4 + Math.random() * 3 + "s";
+    heartsContainer.appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
+  }
+
+  setInterval(createHeart, 800);
+</script>
+
+
+  <!-- Main Letter -->
+  <div class="letter-container">
+    <h1>💌 A Letter (Kind of...)</h1>
+    <p>
+      hi som,
+      We’ve known each other for years now. And honestly, I don’t think I’ve ever said it properly — but yeah, I care about you more than I let on.
+      
+      <em>Inside Out</em>, <em>Notting Hill</em>, <em>50 First Dates</em>, <em>Elementals</em>… though let’s be honest, you slept through most of them 😂  
+      Still, I liked having you there. Even if your eyes were closed 80% of the time.
+      You know how you talk about your day — you light up. Genuinely excited to share every random little detail. It’s cute. You probably don’t even realize how easily you pull people in when you do that.
+
+      I once had a picture of you that I really adored — one of those rare moments where everything just felt... right.  
+      Lost it when my phone broke. Just my luck. But the memory’s stubborn, it stayed.
+
+      I’m way too good at writing long romantic letters (dangerous talent, I know), but I’ll keep this brief.  
+      I don’t want you falling for me or anything… so just this:
+    </p>
+
+  <div class="signature">
+  <div class="quote">"I’m here. And I always will be."</div>
+  <div class="signoff">yours rudely,<br>ayush</div>
+</div>
+  </div>
+</body>
+<script>
+  // Redirect after 20 seconds (20,000 milliseconds)
+  setTimeout(() => {
+    window.location.href = "eyes.html"; // Replace with your desired page
+  }, 80000);
+</script>
+</html>
